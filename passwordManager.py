@@ -41,24 +41,27 @@ choice = ''
 # Start a loop that runs until the user enters the value for 'quit'. 
 while choice != 'q': 
 
-# Give all the choices in a series of print statements. 
-    print("\n[1] Enter 1 to create an encryption key.") 
-    print("[2] Enter 2 to Add Credentials.") 
-    print("[3] Enter 3 to View Credentials") 
-    print("[q] Enter q to quit.") 
+# Give all the choices in a series of print statements.  
+    print("\n[a] Enter 'a' to Add Credentials.") 
+    print("[v] Enter 'v' to View Credentials") 
+    print("[q] Enter 'q' to quit.") 
 
 # Ask for the user's choice. 
     choice = input("\nMake your choice:").lower().strip()
 
 # Respond to the user's choice. 
-    if choice == '1': 
-        print("\nEnter a name for the encryption key\n") 
-    elif choice == '2': 
-        print("\nEnter your crendetials\n") 
-    elif choice == '3': 
-        print("\nEnter your credentials\n") 
+    if choice == 'a': 
+        print(CLEAR_SCREEN + "\nEnter your crendetials\n") 
+        print("Please enter the following details")
+        username = input("Username: ")
+        password = input("Password: ")
+        resource = input("Resource: ")
+        print("You have entered: " + username +
+              " " + password + " " + resource)
+    elif choice == 'v': 
+        print(CLEAR_SCREEN + "\nView your credentials\n") 
     elif choice == 'q': 
-        print("\nExiting the menu\n") 
+        print(CLEAR_SCREEN + "\nExiting the menu\n") 
     else: 
         print(FG_RED + "\nInvalid option, please try again.\n" + RESET) 
 
